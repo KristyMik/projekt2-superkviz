@@ -1,79 +1,100 @@
 // vytvoreni objektu otazka
+let poleOtazek = [
+  {
+      otazka: 'Kolik je v roce tydnu?',
+      obrazek: 'obrazky/pivo.jpg',
+      poleMoznychOdpovedi: [1,2,3],
+      indexSpravneOdpovedi: [0],
+    },
+    
+     {
+        otazka: 'kkk',
+        obrazek: '',
+        poleMoznychOdpovedi: [1,2,3],
+        indexSpravneOdpovedi: [1],
+      },
+    
+       {
+        otazka: 'nnnn',
+        obrazek: '',
+        poleMoznychOdpovedi: [1,2,3],
+        indexSpravneOdpovedi: [3],
+      }
+  ]
+let odpovedi = document.getElementById('odpovedi');
 let kviz = document.querySelector('.kviz');
 
+let otazka = document.createElement('div');
+otazka.id = "otazka";
 
-let poleOtazek = [
-{
-    otazka: 'jak se jmenuju?',
-    obrazek: 'obrazky/pivo.jpg',
-    poleMoznychOdpovedi: [1,2,3],
-    indexSpravneOdpovedi: [0],
-  },
-  
-   {
-      otazka: 'kkk',
-      obrazek: '',
-      poleMoznychOdpovedi: [],
-      indexSpravneOdpovedi: [],
-    },
-  
-     {
-      otazka: 'nnnn',
-      obrazek: '',
-      poleMoznychOdpovedi: [],
-      indexSpravneOdpovedi: [],
-    }
-]
+//let otazka = document.getElementById('#otazka');
+otazka.innerHTML = poleOtazek[0].otazka;
+let moznosti = document.createElement('div');
+moznosti.id = "moznosti";
 
-// vytvoreni divu pro otazky
+
+
+
+
+
+let foto = document.createElement('img');
+foto.classList.add("foto");
+foto.id = ("obrazek");
+foto.src = poleOtazek[0].obrazek;
+
+
+//kviz.appendChild(otazka);
+
+kviz.appendChild(otazka);
+kviz.appendChild(moznosti);
+moznosti.appendChild(odpovedi);
+kviz.appendChild(foto);
+//otazka.appendChild(odpovedi);
+const vsechnyOdpovedi = document.querySelectorAll('#odpovedi');
+
+/* vytvoreni divu pro otazky
 
 for (let i = 0 ; i < poleOtazek.length; i++){
-
-  let otazky = document.createElement('div');
-  otazky.className = '#otazka';
-  let fotoOtazky = document.createElement('img');
-  fotoOtazky.classList.add('#obrazek');
-  //fotoOtazky.querySelector('#obrazek');
-
-if (i == 0){
   
-  fotoOtazky.src = poleOtazek[i].obrazek;
-  otazky.innerHTML = poleOtazek[i].otazka;
+  if (click == true)
+
+  
+  
+}*/
+
+
+
+vsechnyOdpovedi.forEach((a) => {
+
+  a.addEventListener('click', (ukazDalsiOtazku));
+})
+
+
+
+function ukazDalsiOtazku(akce){
+
+  let odpovezeno = akce.target;
+  let spravneOdpovedi = 0;
+  let indexKliknuteOdpovedi = odpovezeno.dataset.odpoved;
+
+  for(let i=0 ; i < poleOtazek.length; i++){
+
+  
+  let indexSpravneOdpovedi = poleOtazek[i].indexSpravneOdpovedi;
+  
+  console.log('klikla jsem na: ' + indexKliknuteOdpovedi + ' a '+ indexSpravneOdpovedi);
+
+  if(indexKliknuteOdpovedi==indexSpravneOdpovedi){
+
+    spravneOdpovedi++;
+    console.log(spravneOdpovedi); 
+
+  }
+
+  }
 
 }
 
-  
-  
-
-  kviz.appendChild(otazky);
-  kviz.appendChild(fotoOtazky);
-}
-
-let moznosti = document.createElement('div');
-moznosti.classList.add('#moznosti');
-
-// vytvoreni ul pro odpovedi
-let odpovedi = document.createElement('ul');
-odpovedi.classList.add('#odpovedi');
-
-// vytvorit div kvizu
-
-//kviz.className = 'kviz';
 
 
-
-
-// vytvoreni divu pro moznosti
-
-
-
-
-
-
-
-
-//vlozeni objektu do kvizu
-
-moznosti.appendChild(odpovedi);
-kviz.appendChild(moznosti);
 
