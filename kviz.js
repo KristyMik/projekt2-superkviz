@@ -65,8 +65,11 @@ for (let i = 0 ; i < poleOtazek.length; i++){
 
 
 vsechnyOdpovedi.forEach((a) => {
-
+  
   a.addEventListener('click', (ukazDalsiOtazku));
+
+
+
 })
 
 
@@ -76,13 +79,10 @@ function ukazDalsiOtazku(akce){
   let odpovezeno = akce.target;
   let spravneOdpovedi = 0;
   let indexKliknuteOdpovedi = odpovezeno.dataset.odpoved;
+  let indexSpravneOdpovedi = poleOtazek[0].indexSpravneOdpovedi;
 
-  for(let i=0 ; i < poleOtazek.length; i++){
-
-  
-  let indexSpravneOdpovedi = poleOtazek[i].indexSpravneOdpovedi;
-  
   console.log('klikla jsem na: ' + indexKliknuteOdpovedi + ' a '+ indexSpravneOdpovedi);
+
 
   if(indexKliknuteOdpovedi==indexSpravneOdpovedi){
 
@@ -91,10 +91,11 @@ function ukazDalsiOtazku(akce){
 
   }
 
-  }
-
 }
 
+ 
+ 
 
+ 
 
 
