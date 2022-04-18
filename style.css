@@ -53,6 +53,16 @@ h1 {
 	color: var(--cervena);
 }
 
+#vyhodnoceni {
+	margin: 0 0 20px 0;
+	font-family: 'Bangers', cursive;
+	font-size: 36px;
+	text-align: center;
+	color: var(--cervena);
+}
+
+
+
 #otazka {
 	margin: 20px 0 30px 0;
 	font-size: 36px;
