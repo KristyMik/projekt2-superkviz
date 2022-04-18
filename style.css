@@ -54,13 +54,21 @@ h1 {
 }
 
 #vyhodnoceni {
-	margin: 0 0 20px 0;
+	margin: 10px 15px 20px 0;
 	font-family: 'Bangers', cursive;
 	font-size: 36px;
 	text-align: center;
 	color: var(--cervena);
 }
 
+#otazkaVyh {
+	margin: 20px 0 20px 0;
+	font-size: 30px;
+	line-height: 1.2;
+	font-family: 'Bangers', cursive;
+	color: black;
+
+}
 
 
 #otazka {
@@ -69,6 +77,7 @@ h1 {
 	line-height: 1.2;
 	text-align: center;
 	color: black;
+	font-family: 'Bangers', cursive;
 }
 
 .obsah {
